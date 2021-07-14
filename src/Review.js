@@ -1,11 +1,6 @@
 import { useState } from "react";
 import Data from "./Data";
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaArrowLeft,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaQuoteLeft } from "react-icons/fa";
 
 const Review = () => {
   const [index, setIndex] = useState(0);
@@ -50,24 +45,27 @@ const Review = () => {
 
   return (
     <>
+      <h1 className="heading">Our Reviews</h1>
+
       <div className="card" key={id}>
         <img src={image} alt="" />
-        <h3>{name}</h3>
-        <p>{job}</p>
-
+        <div className="man">
+          <h2>{name}</h2>
+          <p>{job}</p>
+        </div>
         <div className="buttons">
           <button className="changeBtn" onClick={prevPerson}>
-            <FaArrowLeft />
+            <FaArrowLeft className="FaArrowLeft" />
           </button>
-
-          <p className="text">{text}</p>
+          <p className="text">
+            {" "}
+            <FaQuoteLeft className="FaQuoteLeft" /> {text}
+          </p>
           <button className="changeBtn" onClick={nextPerson}>
             <FaArrowRight />
           </button>
         </div>
-
-        <p>{index + 1}/5</p>
-
+        <p className="pageNum">{index + 1}/5</p>
         <button className="btn" onClick={random}>
           random
         </button>

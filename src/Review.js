@@ -1,6 +1,11 @@
 import { useState } from "react";
 import Data from "./Data";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const Review = () => {
   const [index, setIndex] = useState(0);
@@ -47,20 +52,25 @@ const Review = () => {
     <>
       <div className="card" key={id}>
         <img src={image} alt="" />
-        <p>{name}</p>
+        <h3>{name}</h3>
         <p>{job}</p>
-        <p>{text}</p>
 
         <div className="buttons">
-          <button onClick={prevPerson}>
-            <FaChevronLeft />
+          <button className="changeBtn" onClick={prevPerson}>
+            <FaArrowLeft />
           </button>
-          <button onClick={nextPerson}>
-            <FaChevronRight />
+
+          <p className="text">{text}</p>
+          <button className="changeBtn" onClick={nextPerson}>
+            <FaArrowRight />
           </button>
         </div>
 
-        <button onClick={random}>reandom</button>
+        <p>{index + 1}/5</p>
+
+        <button className="btn" onClick={random}>
+          random
+        </button>
       </div>
     </>
   );

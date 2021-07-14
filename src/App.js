@@ -1,4 +1,3 @@
-import { FaBeer } from "react-icons/fa";
 import Review from "./Review";
 
 function App() {
